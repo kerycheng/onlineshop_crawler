@@ -28,6 +28,7 @@ class Ui_MainWindow(object):
         self.tell_pages.setFont(font)
         self.tell_pages.setObjectName("tell_pages")
         self.start_button = QtWidgets.QPushButton(self.centralwidget)
+        self.start_button.clicked.connect(self.onButtonClick)
         self.start_button.setGeometry(QtCore.QRect(30, 238, 431, 71))
         font = QtGui.QFont()
         font.setFamily("Taipei Sans TC Beta")
@@ -36,7 +37,6 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.start_button.setFont(font)
         self.start_button.setObjectName("start_button")
-        self.start_button.clicked.connect(self.onButtonClick)
         self.state_table = QtWidgets.QTextBrowser(self.centralwidget)
         self.state_table.setGeometry(QtCore.QRect(30, 320, 431, 31))
         font = QtGui.QFont()
@@ -61,8 +61,8 @@ class Ui_MainWindow(object):
         self.pages_input.setText("")
         self.pages_input.setObjectName("pages_input")
         self.type_shopee_button = QtWidgets.QPushButton(self.centralwidget)
-        self.type_shopee_button.setGeometry(QtCore.QRect(30, 160, 431, 71))
         self.type_shopee_button.setCheckable(True)
+        self.type_shopee_button.setGeometry(QtCore.QRect(30, 160, 211, 71))
         font = QtGui.QFont()
         font.setFamily("Taipei Sans TC Beta")
         font.setPointSize(20)
@@ -71,6 +71,17 @@ class Ui_MainWindow(object):
         font.setKerning(True)
         self.type_shopee_button.setFont(font)
         self.type_shopee_button.setObjectName("type_shopee_button")
+        self.type_ruten_button = QtWidgets.QPushButton(self.centralwidget)
+        self.type_ruten_button.setCheckable(True)
+        self.type_ruten_button.setGeometry(QtCore.QRect(250, 160, 211, 71))
+        font = QtGui.QFont()
+        font.setFamily("Taipei Sans TC Beta")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        font.setKerning(True)
+        self.type_ruten_button.setFont(font)
+        self.type_ruten_button.setObjectName("type_ruten_button")
         self.start_button.raise_()
         self.tell_keyword.raise_()
         self.tell_pages.raise_()
@@ -78,6 +89,7 @@ class Ui_MainWindow(object):
         self.keyword_input.raise_()
         self.pages_input.raise_()
         self.type_shopee_button.raise_()
+        self.type_ruten_button.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 490, 21))
@@ -97,20 +109,17 @@ class Ui_MainWindow(object):
         self.tell_pages.setText(_translate("MainWindow", "請輸入搜尋頁數："))
         self.start_button.setText(_translate("MainWindow", "開   始"))
         self.type_shopee_button.setText(_translate("MainWindow", "蝦  皮"))
+        self.type_ruten_button.setText(_translate("MainWindow", "露天"))
 
     def onButtonClick(self):
         product_keyword = self.keyword_input.text()
         product_pages = self.pages_input.text()
 
         if self.type_shopee_button.isChecked():
-            print('click shopee')
             controller.controller(product_keyword, product_pages, 'Shopee')
-            self.state_table.setText('資料已存檔')
 
-        elif self.type_ruten_button.isChecked():
-            print('click ruten')
+        if self.type_ruten_button.isChecked():
             controller.controller(product_keyword, product_pages, 'Ruten')
-            self.state_table.setText('此功能尚未開放')
 
 if __name__ == "__main__":
     import sys
