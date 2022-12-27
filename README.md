@@ -33,7 +33,7 @@ main_comtroller.py獲取以上資料，controller透過檢查賣場按鈕判斷�
   * https://www.youtube.com/watch?v=ohB_o7r4Obo
   * https://ithelp.ithome.com.tw/articles/10274773
 
-### 
+### 更新歷史
   * 2022/12/27 新增檔案儲存路徑、透過state_table顯示程式當前執行狀態、UI界面美化
   * 2022/12/26 新增露天賣場按鈕、加了多執行緒可同時執行兩個賣場爬蟲程序
   * 2022/12/25 新增UI介面、賣場選擇按鈕
