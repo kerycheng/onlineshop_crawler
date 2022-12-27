@@ -198,7 +198,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "賣場爬蟲程式v0.5"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.start_button.setText(_translate("MainWindow", "開   始"))
         self.type_shopee_button.setText(_translate("MainWindow", "蝦  皮"))
         self.type_ruten_button.setText(_translate("MainWindow", "露天"))
