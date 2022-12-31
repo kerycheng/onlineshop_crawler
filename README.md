@@ -25,8 +25,10 @@ main_comtroller.py獲取以上資料，controller透過檢查賣場按鈕判斷�
         只想爬取商品標題、已售出數量、商品評價等
         
 ### 注意事項
-  如果要將程式把包成.exe檔，請輸入以下指令  
-  pyinstaller --add-data 'ca.crt;seleniumwire' --add-data 'ca.key;seleniumwire' -i bug.ico -F start.py -w
+  如果要將程式打包成.exe檔，請輸入以下指令  
+```sh
+pyinstaller --add-data 'ca.crt;seleniumwire' --add-data 'ca.key;seleniumwire' -i bug.ico -F start.py -w
+```
 
 ### 程式參考來源
   * https://www.youtube.com/watch?v=vU-Z9vCsZpQ
